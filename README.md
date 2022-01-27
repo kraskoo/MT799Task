@@ -2,7 +2,7 @@
 
 ## Description
 
-Read files in MT799 format and write it to MSSQL database.
+Read files in MT799 format and write them to MSSQL database.
 The program/service will check every 5 seconds for new files and will add them to database.
 
 ## Build
