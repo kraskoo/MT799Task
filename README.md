@@ -16,7 +16,7 @@ Run ``InstallService.bat`` as administrator
 Run ``UninstallService.bat`` as administrator
 
 ## How to work
-Put your files in "C:\MT799" or change the path (before start install the service) in ``appsettings.json`` and put the files there.
+Put your files in "C:\MT799" or change the path (before installing the service) in ``appsettings.json`` and put the files there.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
