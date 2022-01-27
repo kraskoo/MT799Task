@@ -9,11 +9,11 @@ public class MT799WorkerService : IMT799WorkerService
 
     public MT799WorkerService(IMessageRepository repository) => this.repository = repository;
 
-    public async Task CreateRecords(params string[] fileText)
+    public async Task CreateRecords(CancellationToken cancellationToken = default, params string[] fileText)
     {
         foreach (var text in fileText)
         {
-            await this.repository.AddAsync(this.ParseText(text));
+            await this.repository.AddAsync(this.ParseText(text), cancellationToken);
         }
     }
 

@@ -24,12 +24,12 @@ public class MT799Worker : BackgroundService
         {
             Directory.CreateDirectory(this.variables.MT799Path);
             var files = Directory.GetFiles(this.variables.MT799Path).Except(this.files);
-            await this.ApplyFiles(files);
+            await this.ApplyFiles(files, stoppingToken);
             await Task.Delay(TimeSpan.FromSeconds(this.variables.SecondsDelay), stoppingToken);
         }
     }
 
-    private async Task ApplyFiles(IEnumerable<string> files)
+    private async Task ApplyFiles(IEnumerable<string> files, CancellationToken cancellationToken)
     {
         var fileTexts = files.Select(f => File.ReadAllText(f)).ToArray();
         foreach (var file in files)
@@ -37,6 +37,6 @@ public class MT799Worker : BackgroundService
             this.files.Add(file);
         }
 
-        await this.service.CreateRecords(fileTexts);
+        await this.service.CreateRecords(cancellationToken, fileTexts);
     }
 }
