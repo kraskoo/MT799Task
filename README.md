@@ -9,5 +9,5 @@ Read files in MT799 format and write it to MSSQL database
 ![alt text](images/settings.png)
 2. Run InstallService.bat as administrator
 
-## Working
-Put your files in "C:\MT799" or change the path in ``appsettings.json`` and put files there
+## How to work
+Put your files in "C:\MT799" or change the path in ``appsettings.json`` and put the files there.
